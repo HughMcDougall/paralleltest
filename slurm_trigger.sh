@@ -1,13 +1,9 @@
 #!/bin/bash
-#SBATCH --job-name=HM_line_fit-job-%j
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task 1
-#SBATCH --mem-per-cpu=256G
-#SBATCH --time=2-00:00:00
-#SBATCH --array=0-59
+#SBATCH --mem-per-cpu= 100M
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=hmgetafix@gmail.com
-#SBATCH --output=./slurm_logs/slurm-%j.out
 
 # Load the necessary modules
 module load anaconda3/5.2.0
