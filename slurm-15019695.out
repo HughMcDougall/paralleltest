@@ -1,0 +1,3 @@
+slurmstepd: error: Job 15019695 exceeded virtual memory limit (144384 > 22528), being killed
+slurmstepd: error: Exceeded job memory limit
+slurmstepd: error: *** JOB 15019695 ON smp-0-33 CANCELLED AT 2023-08-10T11:22:12 ***
