@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --ntasks-per-node=1 
-#SBATCH --cpus-per-task 2
+#SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu= 1M
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=hmgetafix@gmail.com

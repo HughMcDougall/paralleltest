@@ -1,3 +1,3 @@
 wsl git add .
 wsl git commit -m "autocommit via bat"
-wsl push -u origin main
+wsl git push -u origin main
