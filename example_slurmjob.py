@@ -9,11 +9,17 @@ Meant to be used as a test of multi-node usage on the cluster
 '''
 
 #===========================
+print("-"*79)
+print("Doing Imports")
 import numpyro as npy
 import numpy as np
 from jax.random import PRNGKey
 import jax
 
+#===========================
+print("-"*79)
+print("Doing NumPyro setup")
+      
 rkey = PRNGKey(1)
 
 num_chains = 2
@@ -39,7 +45,6 @@ def model(X,Y,E):
         
 
 #===========================
-
 print("-"*79)
 print("Doing MCMC")
 
@@ -53,6 +58,7 @@ print("Done")
 print("-"*79)
 
 sampler.print_summary()
+print("-"*79)
 
 
 #==========================
