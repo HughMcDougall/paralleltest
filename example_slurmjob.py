@@ -17,9 +17,10 @@ import jax
 rkey = PRNGKey(1)
 
 num_chains = 2
-#XLA_FLAGS="--xla_force_host_platform_device_count=%i"%num_chains
 npy.set_platform('cpu')
 npy.set_host_device_count(num_chains)
+
+print("Starting program with %i cores registering from jax.local_device_count()" %jax.local_device_count())
 
 #===========================
 
@@ -39,6 +40,7 @@ def model(X,Y,E):
 
 #===========================
 
+print("-"*79)
 print("Doing MCMC")
 
 sampler = npy.infer.MCMC(npy.infer.NUTS(model=model),
@@ -48,6 +50,7 @@ sampler = npy.infer.MCMC(npy.infer.NUTS(model=model),
 sampler.run(rkey, X,Y,E)
 
 print("Done")
+print("-"*79)
 
 sampler.print_summary()
 
