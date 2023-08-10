@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=numpyroparalleltest
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1 
+#SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu=1G
 #SBATCH --mail-type=BEGIN,END,FAIL
