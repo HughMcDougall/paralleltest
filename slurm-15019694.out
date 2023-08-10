@@ -1,0 +1,13 @@
+No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+/data/uqhmcdou/paralleltest/example_slurmjob.py:44: UserWarning: There are not enough devices to run parallel chains: expected 2 but got 1. Chains will be drawn sequentially. If you are running MCMC in CPU, consider using `numpyro.set_host_device_count(2)` at the beginning of your program. You can double-check how many devices are available in your system using `jax.local_device_count()`.
+  sampler = npy.infer.MCMC(npy.infer.NUTS(model=model),
+Doing MCMC
+  0%|          | 0/800 [00:00<?, ?it/s]warmup:   0%|          | 1/800 [00:02<35:25,  2.66s/it, 1 steps of size 2.34e+00. acc. prob=0.00]warmup:  30%|██▉       | 239/800 [00:02<00:04, 121.64it/s, 15 steps of size 1.15e-02. acc. prob=0.77]sample:  58%|█████▊    | 465/800 [00:02<00:01, 266.72it/s, 3 steps of size 9.14e-03. acc. prob=0.95] sample:  83%|████████▎ | 661/800 [00:02<00:00, 416.24it/s, 59 steps of size 9.14e-03. acc. prob=0.95]sample: 100%|██████████| 800/800 [00:03<00:00, 264.20it/s, 295 steps of size 9.14e-03. acc. prob=0.95]
+  0%|          | 0/800 [00:00<?, ?it/s]warmup:  30%|███       | 240/800 [00:00<00:00, 2390.48it/s, 43 steps of size 8.28e-03. acc. prob=0.77]sample:  60%|██████    | 480/800 [00:00<00:00, 2253.22it/s, 27 steps of size 9.17e-03. acc. prob=0.94]sample:  88%|████████▊ | 706/800 [00:00<00:00, 2222.97it/s, 3 steps of size 9.17e-03. acc. prob=0.94] sample: 100%|██████████| 800/800 [00:00<00:00, 2235.64it/s, 59 steps of size 9.17e-03. acc. prob=0.94]
+Done
+
+                mean       std    median      5.0%     95.0%     n_eff     r_hat
+         c      1.94      0.25      1.99      1.90      2.08     12.75      1.12
+         m      1.00      0.01      1.00      1.00      1.00     12.73      1.12
+
+Number of divergences: 0
