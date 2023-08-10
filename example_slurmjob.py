@@ -15,6 +15,7 @@ import numpyro as npy
 import numpy as np
 from jax.random import PRNGKey
 import jax
+import os
 
 #===========================
 print("-"*79)
@@ -23,6 +24,13 @@ print("Doing NumPyro setup")
 rkey = PRNGKey(1)
 
 num_chains = 2
+
+if __name__ == "__main__":
+    os.environ["XLA_FLAGS"] = (
+        "--xla_force_host_platform_device_count=%i" %num_chains
+        "--xla_cpu_multi_thread_eigen=true"
+    )
+    
 npy.set_platform('cpu')
 npy.set_host_device_count(num_chains)
 
