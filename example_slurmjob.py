@@ -61,9 +61,9 @@ def main():
     #===========================
     print("-"*79)
     print("Doing Nested Sampling")
-    NS = NestedSampler(model=np_model, 
-                       constructor_kwargs={'num_live_points': 5000, 'max_samples': 50000},
-                       termination_kwargs={'live_evidence_frac': 0.01, 'num_parallel_samplers': 2}
+    NS = NestedSampler(model=model, 
+                       constructor_kwargs={'num_live_points': 5000, 'max_samples': 50000, 'num_parallel_samplers': 1},
+                       termination_kwargs={'live_evidence_frac': 0.01}
                       )
     NS.run(rkey, X,Y,E)
 
@@ -79,7 +79,7 @@ def main():
 
 if __name__ == "__main__":
     os.environ["XLA_FLAGS"] = (
-        "--xla_force_host_platform_device_count=2 "
+        "--xla_force_host_platform_device_count=2 " 
         "--xla_cpu_multi_thread_eigen=true"
     )
     main()
