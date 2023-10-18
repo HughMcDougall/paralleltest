@@ -16,6 +16,7 @@ import numpy as np
 from jax.random import PRNGKey
 import jax
 import os
+from numpyro.contrib.nested_sampling import NestedSampler
 
     #===========================
 def main():
@@ -56,11 +57,21 @@ def main():
                              num_samples = 500,
                              num_chains = num_chains)
     sampler.run(rkey, X,Y,E)
+    
+    #===========================
+    print("-"*79)
+    print("Doing Nested Sampling")
+    NS = NestedSampler(model=np_model, 
+                       constructor_kwargs={'num_live_points': 5000, 'max_samples': 50000},
+                       termination_kwargs={'live_evidence_frac': 0.01, 'num_parallel_samplers': 2}
+                      )
+    NS.run(rkey, X,Y,E)
 
     print("Done")
     print("-"*79)
 
     sampler.print_summary()
+    NS.print_summary()
     print("-"*79)
 
 

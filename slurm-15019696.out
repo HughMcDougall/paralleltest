@@ -1,16 +1,0 @@
-No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
-/data/uqhmcdou/paralleltest/example_slurmjob.py:46: UserWarning: There are not enough devices to run parallel chains: expected 2 but got 1. Chains will be drawn sequentially. If you are running MCMC in CPU, consider using `numpyro.set_host_device_count(2)` at the beginning of your program. You can double-check how many devices are available in your system using `jax.local_device_count()`.
-  sampler = npy.infer.MCMC(npy.infer.NUTS(model=model),
-Starting program with 1 cores registering from jax.local_device_count()
--------------------------------------------------------------------------------
-Doing MCMC
-  0%|          | 0/800 [00:00<?, ?it/s]warmup:   0%|          | 1/800 [00:03<50:09,  3.77s/it, 1 steps of size 2.34e+00. acc. prob=0.00]warmup:  25%|██▌       | 200/800 [00:03<00:08, 72.98it/s, 11 steps of size 1.93e-02. acc. prob=0.77]sample:  50%|█████     | 403/800 [00:03<00:02, 170.05it/s, 195 steps of size 9.14e-03. acc. prob=0.95]sample:  70%|███████   | 563/800 [00:04<00:00, 264.63it/s, 7 steps of size 9.14e-03. acc. prob=0.95]  sample:  92%|█████████▏| 732/800 [00:04<00:00, 387.72it/s, 195 steps of size 9.14e-03. acc. prob=0.95]sample: 100%|██████████| 800/800 [00:04<00:00, 190.21it/s, 295 steps of size 9.14e-03. acc. prob=0.95]
-  0%|          | 0/800 [00:00<?, ?it/s]warmup:  27%|██▋       | 213/800 [00:00<00:00, 2124.49it/s, 7 steps of size 8.24e-03. acc. prob=0.77]sample:  53%|█████▎    | 426/800 [00:00<00:00, 2014.88it/s, 91 steps of size 9.17e-03. acc. prob=0.94]sample:  78%|███████▊  | 628/800 [00:00<00:00, 1965.32it/s, 7 steps of size 9.17e-03. acc. prob=0.94] sample: 100%|██████████| 800/800 [00:00<00:00, 1981.18it/s, 59 steps of size 9.17e-03. acc. prob=0.94]
-Done
--------------------------------------------------------------------------------
-
-                mean       std    median      5.0%     95.0%     n_eff     r_hat
-         c      1.94      0.25      1.99      1.90      2.08     12.75      1.12
-         m      1.00      0.01      1.00      1.00      1.00     12.73      1.12
-
-Number of divergences: 0

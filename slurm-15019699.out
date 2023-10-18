@@ -1,4 +1,0 @@
-  File "/data/uqhmcdou/paralleltest/example_slurmjob.py", line 30
-    "--xla_force_host_platform_device_count=%i" %num_chains
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: invalid syntax. Perhaps you forgot a comma?
