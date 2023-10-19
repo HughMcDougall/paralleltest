@@ -1,24 +1,0 @@
-INFO[2023-10-19 14:52:16,610]: Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
-INFO[2023-10-19 14:52:16,610]: Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
-INFO[2023-10-19 14:52:16,611]: Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
-INFO[2023-10-19 14:52:16,611]: Unable to initialize backend 'plugin': xla_extension has no attributes named get_plugin_device_client. Compile TensorFlow with //tensorflow/compiler/xla/python:enable_plugin_device set to true (defaults to false) to enable this.
-WARNING[2023-10-19 14:52:16,611]: No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
-/data/uqhmcdou/paralleltest/example_slurmjob_C.py:55: UserWarning: There are not enough devices to run parallel chains: expected 2 but got 1. Chains will be drawn sequentially. If you are running MCMC in CPU, consider using `numpyro.set_host_device_count(2)` at the beginning of your program. You can double-check how many devices are available in your system using `jax.local_device_count()`.
-  sampler = npy.infer.MCMC(npy.infer.NUTS(model=model),
--------------------------------------------------------------------------------
-Doing Imports
--------------------------------------------------------------------------------
-Doing NumPyro setup
-Starting program with 1 cores registering from jax.local_device_count()
--------------------------------------------------------------------------------
-Doing MCMC
-  0%|          | 0/800 [00:00<?, ?it/s]warmup:   0%|          | 1/800 [00:03<44:58,  3.38s/it, 1 steps of size 2.34e+00. acc. prob=0.00]warmup:  26%|██▌       | 204/800 [00:03<00:07, 82.65it/s, 23 steps of size 1.23e-02. acc. prob=0.77]sample:  52%|█████▏    | 412/800 [00:03<00:02, 192.03it/s, 87 steps of size 9.14e-03. acc. prob=0.95]sample:  74%|███████▍  | 590/800 [00:03<00:00, 307.21it/s, 147 steps of size 9.14e-03. acc. prob=0.95]sample:  96%|█████████▌| 765/800 [00:03<00:00, 442.61it/s, 275 steps of size 9.14e-03. acc. prob=0.95]sample: 100%|██████████| 800/800 [00:03<00:00, 210.58it/s, 295 steps of size 9.14e-03. acc. prob=0.95]
-  0%|          | 0/800 [00:00<?, ?it/s]warmup:  27%|██▋       | 216/800 [00:00<00:00, 2157.68it/s, 15 steps of size 2.61e-03. acc. prob=0.77]sample:  54%|█████▍    | 432/800 [00:00<00:00, 2070.98it/s, 79 steps of size 9.17e-03. acc. prob=0.94]sample:  80%|████████  | 640/800 [00:00<00:00, 2035.28it/s, 155 steps of size 9.17e-03. acc. prob=0.94]sample: 100%|██████████| 800/800 [00:00<00:00, 2047.65it/s, 59 steps of size 9.17e-03. acc. prob=0.94] 
--------------------------------------------------------------------------------
-
-                mean       std    median      5.0%     95.0%     n_eff     r_hat
-         c      1.94      0.25      1.99      1.90      2.08     12.75      1.12
-         m      1.00      0.01      1.00      1.00      1.00     12.73      1.12
-
-Number of divergences: 0
--------------------------------------------------------------------------------
