@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=numpyroparalleltest
+#SBATCH --job-name=npy_Parallel_B
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=2
