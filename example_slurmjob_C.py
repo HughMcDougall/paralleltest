@@ -16,7 +16,7 @@ import numpy as np
 from jax.random import PRNGKey
 import jax
 import os
-from numpyro.contrib.nested_sampling import NestedSampler
+
 
     #===========================
 def main():
@@ -62,6 +62,8 @@ def main():
     #===========================
     sampler.print_summary()
     print("-"*79)
+
+    from numpyro.contrib.nested_sampling import NestedSampler
 
 
 #==========================
