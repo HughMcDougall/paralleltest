@@ -74,7 +74,7 @@ def main():
     sampler.print_summary()
     NS.print_summary()
 
-    NS_samples = NS.get_sampels(rkey, 300*num_chains)
+    NS_samples = NS.get_samples(rkey, 300*num_chains)
     for key in NS_samples.keys():
         print(key, ":", NS_samples[key].mean())
 
