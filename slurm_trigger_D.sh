@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=numpyroparalleltest
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=2
-#SBATCH --cpus-per-task=2
+#SBATCH --ntasks-per-node=5
+#SBATCH --cpus-per-task=5
 #SBATCH --mem-per-cpu=4G
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=hmgetafix@gmail.com

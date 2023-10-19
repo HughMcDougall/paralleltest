@@ -24,7 +24,7 @@ def main():
     print("-"*79)
     print("Doing NumPyro setup")
     
-    num_chains = 2
+    num_chains = 5
     npy.set_platform('cpu')
     npy.set_host_device_count(num_chains)
 
@@ -71,10 +71,16 @@ def main():
     print("Done")
     print("-"*79)
 
+
+    print("NUTS summary:")
     sampler.print_summary()
+    print("NS Summary:")
     NS.print_summary()
 
+    print("Doing NS samples:")
     NS_samples = NS.get_samples(rkey, 300*num_chains)
+
+    print("keys are", NS_samples.keys())
     for key in NS_samples.keys():
         print(key, ":", NS_samples[key].mean())
 
@@ -86,7 +92,7 @@ def main():
 if __name__ == "__main__":
     import os
     os.environ["XLA_FLAGS"] = (
-        "--xla_force_host_platform_device_count=2 "
+        "--xla_force_host_platform_device_count=5"
         "--xla_cpu_multi_thread_eigen=true"
     )
     main()
