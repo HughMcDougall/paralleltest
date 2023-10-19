@@ -19,7 +19,7 @@ def main():
     import numpy as np
     from jax.random import PRNGKey
     import jax
-    from numpyro.contrib.nested_sampling import NestedSampler
+
 
     print("-"*79)
     print("Doing NumPyro setup")
@@ -61,6 +61,7 @@ def main():
     #===========================
     print("-"*79)
     print("Doing Nested Sampling")
+    from numpyro.contrib.nested_sampling import NestedSampler
     NS = NestedSampler(model=model, 
                        constructor_kwargs={'num_live_points': 5000, 'max_samples': 50000, 'num_parallel_samplers': jax.local_device_count()},
                        termination_kwargs={'live_evidence_frac': 0.01}
@@ -72,6 +73,11 @@ def main():
 
     sampler.print_summary()
     NS.print_summary()
+
+    NS_samples = NS.get_sampels(rkey, 300*num_chains)
+    for key in NS_samples.keys():
+        print(key, ":", NS_samples[key].mean())
+
     print("-"*79)
 
 
