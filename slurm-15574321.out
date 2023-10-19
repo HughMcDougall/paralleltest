@@ -1,49 +1,0 @@
-INFO[2023-10-19 14:40:44,907]: Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
-INFO[2023-10-19 14:40:44,907]: Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
-INFO[2023-10-19 14:40:44,908]: Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
-INFO[2023-10-19 14:40:44,909]: Unable to initialize backend 'plugin': xla_extension has no attributes named get_plugin_device_client. Compile TensorFlow with //tensorflow/compiler/xla/python:enable_plugin_device set to true (defaults to false) to enable this.
-WARNING[2023-10-19 14:40:44,909]: No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
-/data/uqhmcdou/paralleltest/example_slurmjob.py:55: UserWarning: There are not enough devices to run parallel chains: expected 2 but got 1. Chains will be drawn sequentially. If you are running MCMC in CPU, consider using `numpyro.set_host_device_count(2)` at the beginning of your program. You can double-check how many devices are available in your system using `jax.local_device_count()`.
-  sampler = npy.infer.MCMC(npy.infer.NUTS(model=model),
--------------------------------------------------------------------------------
-Doing Imports
--------------------------------------------------------------------------------
-Doing NumPyro setup
-Starting program with 1 cores registering from jax.local_device_count()
--------------------------------------------------------------------------------
-Doing MCMC
-  0%|          | 0/800 [00:00<?, ?it/s]warmup:   0%|          | 1/800 [00:03<49:39,  3.73s/it, 1 steps of size 2.34e+00. acc. prob=0.00]warmup:  22%|██▏       | 172/800 [00:03<00:09, 63.35it/s, 3 steps of size 2.79e-03. acc. prob=0.76]sample:  45%|████▌     | 361/800 [00:03<00:02, 154.76it/s, 39 steps of size 9.14e-03. acc. prob=0.94]sample:  64%|██████▍   | 512/800 [00:04<00:01, 245.17it/s, 3 steps of size 9.14e-03. acc. prob=0.95] sample:  82%|████████▏ | 658/800 [00:04<00:00, 350.77it/s, 211 steps of size 9.14e-03. acc. prob=0.95]sample: 100%|██████████| 800/800 [00:04<00:00, 189.54it/s, 295 steps of size 9.14e-03. acc. prob=0.95]
-  0%|          | 0/800 [00:00<?, ?it/s]warmup:  24%|██▍       | 196/800 [00:00<00:00, 1953.99it/s, 47 steps of size 1.38e-02. acc. prob=0.77]sample:  49%|████▉     | 392/800 [00:00<00:00, 1880.73it/s, 31 steps of size 9.17e-03. acc. prob=0.94]sample:  73%|███████▎  | 581/800 [00:00<00:00, 1841.40it/s, 1 steps of size 9.17e-03. acc. prob=0.94] sample:  96%|█████████▌| 766/800 [00:00<00:00, 1844.49it/s, 59 steps of size 9.17e-03. acc. prob=0.94]sample: 100%|██████████| 800/800 [00:00<00:00, 1852.15it/s, 59 steps of size 9.17e-03. acc. prob=0.94]
--------------------------------------------------------------------------------
-Doing Nested Sampling
-Done
--------------------------------------------------------------------------------
-
-                mean       std    median      5.0%     95.0%     n_eff     r_hat
-         c      1.94      0.25      1.99      1.90      2.08     12.75      1.12
-         m      1.00      0.01      1.00      1.00      1.00     12.73      1.12
-
-Number of divergences: 0
---------
-Termination Conditions:
-Reached max samples
-Small remaining evidence
---------
-# likelihood evals: 1836962
-# samples: 50000
-# slices: 234444.0
-# slices / acceptance: 7.0
-# likelihood evals / sample: 36.7
-# likelihood evals / slice: 7.6
---------
-logZ=-28.31 +- 0.1
-H=28.0
-ESS=53
---------
-c: mean +- std.dev. | 10%ile / 50%ile / 90%ile | MAP est. | max(L) est.
-c: 2.01 +- 0.052 | 1.941 / 2.027 / 2.065 | 1.994 | 1.994
---------
-m: mean +- std.dev. | 10%ile / 50%ile / 90%ile | MAP est. | max(L) est.
-m: 0.9996 +- 0.0018 | 0.9978 / 0.999 / 1.002 | 1.0002 | 1.0002
---------
--------------------------------------------------------------------------------

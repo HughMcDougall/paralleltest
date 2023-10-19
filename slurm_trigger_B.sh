@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=npy_Parallel_B
+#SBATCH --job-name=numpyroparalleltest
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=2
@@ -14,4 +14,4 @@ eval "$(conda shell.bash hook)"
 conda activate lag_conda
 
 # Run your Python script
-python example_slurmjob.py
+python example_slurmjob_B.py
