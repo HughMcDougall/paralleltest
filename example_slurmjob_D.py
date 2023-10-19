@@ -23,14 +23,13 @@ def main():
 
     print("-"*79)
     print("Doing NumPyro setup")
-          
-    rkey = PRNGKey(1)
-
+    
     num_chains = 2
-
     npy.set_platform('cpu')
     npy.set_host_device_count(num_chains)
 
+    rkey = PRNGKey(1)
+    
     print("Starting program with %i cores registering from jax.local_device_count()" %jax.local_device_count())
 
     #===========================

@@ -1,54 +1,0 @@
-INFO[2023-10-19 14:59:11,680]: Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
-INFO[2023-10-19 14:59:11,680]: Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
-INFO[2023-10-19 14:59:11,681]: Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
-INFO[2023-10-19 14:59:11,681]: Unable to initialize backend 'plugin': xla_extension has no attributes named get_plugin_device_client. Compile TensorFlow with //tensorflow/compiler/xla/python:enable_plugin_device set to true (defaults to false) to enable this.
-WARNING[2023-10-19 14:59:11,681]: No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
--------------------------------------------------------------------------------
-Doing Imports
--------------------------------------------------------------------------------
-Doing NumPyro setup
-Starting program with 2 cores registering from jax.local_device_count()
--------------------------------------------------------------------------------
-Doing MCMC
-  0%|          | 0/800 [00:00<?, ?it/s]Compiling.. :   0%|          | 0/800 [00:00<?, ?it/s]
-  0%|          | 0/800 [00:00<?, ?it/s][A
-Compiling.. :   0%|          | 0/800 [00:00<?, ?it/s][ARunning chain 0:   0%|          | 0/800 [00:06<?, ?it/s]
-Running chain 1:   0%|          | 0/800 [00:06<?, ?it/s][ARunning chain 0: 100%|██████████| 800/800 [00:06<00:00, 127.38it/s]
-Running chain 1: 100%|██████████| 800/800 [00:06<00:00, 127.38it/s]
-/home/uqhmcdou/.conda/envs/lag_conda/lib/python3.10/site-packages/jax/_src/dispatch.py:289: UserWarning: The jitted function fresh_run includes a pmap. Using jit-of-pmap can lead to inefficient data movement, as the outer jit does not preserve sharded data representations and instead collects input and output arrays onto a single device. Consider removing the outer jit unless you know what you're doing. See https://github.com/google/jax/issues/2926.
-  warnings.warn(
-/home/uqhmcdou/.conda/envs/lag_conda/lib/python3.10/site-packages/jax/_src/dispatch.py:289: UserWarning: The jitted function improve includes a pmap. Using jit-of-pmap can lead to inefficient data movement, as the outer jit does not preserve sharded data representations and instead collects input and output arrays onto a single device. Consider removing the outer jit unless you know what you're doing. See https://github.com/google/jax/issues/2926.
-  warnings.warn(
--------------------------------------------------------------------------------
-Doing Nested Sampling
-Done
--------------------------------------------------------------------------------
-
-                mean       std    median      5.0%     95.0%     n_eff     r_hat
-         c      1.94      0.25      1.99      1.90      2.08     12.35      1.12
-         m      1.00      0.01      1.00      1.00      1.00     12.29      1.12
-
-Number of divergences: 0
---------
-Termination Conditions:
-Reached max samples
-Small remaining evidence
---------
-# likelihood evals: 2335323
-# samples: 50000
-# slices: 301428.0
-# slices / acceptance: 9.0
-# likelihood evals / sample: 46.7
-# likelihood evals / slice: 7.6
---------
-logZ=-28.28 +- 0.1
-H=28.0
-ESS=54
---------
-c: mean +- std.dev. | 10%ile / 50%ile / 90%ile | MAP est. | max(L) est.
-c: 2.018 +- 0.047 | 1.969 / 2.021 / 2.077 | 2.004 | 2.004
---------
-m: mean +- std.dev. | 10%ile / 50%ile / 90%ile | MAP est. | max(L) est.
-m: 0.9994 +- 0.0016 | 0.9975 / 0.9993 / 1.001 | 0.9999 | 0.9999
---------
--------------------------------------------------------------------------------
